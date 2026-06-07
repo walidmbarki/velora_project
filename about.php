@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velora • About & Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="topbar">About Velora • Brand story, shipping, returns, sizing, and contact</div>
+
+  <header>
+    <div class="container navbar">
+      <a href="index.html" class="logo" aria-label="Velora home">
+        <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M12 14L32 50L52 14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M22 14L32 32L42 14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Velora
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="women.html">Women</a></li>
+          <li><a href="men.html">Men</a></li>
+          <li><a href="accessories.html">Accessories</a></li>
+          <li><a href="sale.html">Sale</a></li>
+          <li><a href="about.html" class="active-link">About</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" aria-label="Search">⌕</button>
+        <button class="icon-btn" aria-label="Wishlist">♡</button>
+        <button class="icon-btn" aria-label="Cart">🛍</button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / BRAND STORY -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <span class="eyebrow">About the brand</span>
+          <h1>A fashion store should feel curated, connected, and trustworthy.</h1>
+          <p>
+            Velora is imagined as a calm, apparel‑first fashion destination. The focus is on clean layouts,
+            consistent clothing imagery, and clear navigation between collections, looks, and support pages.
+          </p>
+          <div class="hero-actions">
+            <a href="index.html" class="btn btn-primary">Go to homepage</a>
+            <a href="women.html" class="btn btn-secondary">Start shopping</a>
+          </div>
+        </div>
+
+        <div class="hero-showcase">
+          <article class="hero-main-card">
+            <img src="https://picsum.photos/seed/velora-about-hero-01/900/1100" alt="Fashion atelier style brand image" width="900" height="1100" loading="eager">
+            <div class="hero-overlay-card">
+              <span>Brand direction</span>
+              Modern presentation, apparel-focused imagery, and cleaner category experiences.
+            </div>
+          </article>
+          <article class="hero-side-card">
+            <img src="https://picsum.photos/seed/velora-about-hero-02/500/1100" alt="Fashion lookbook garments and studio styling" width="500" height="1100" loading="eager">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section class="section section-soft">
+      <div class="container story-grid">
+        <article class="story-card">
+          <img src="https://picsum.photos/seed/velora-about-story-01/1000/1100" alt="Fashion campaign image with garments and editorial styling" width="1000" height="1100" loading="lazy">
+          <div class="floating-note">
+            <span>Why this page matters</span>
+            A longer support page makes the whole website feel more complete and reliable.
+          </div>
+        </article>
+
+        <div class="story-copy">
+          <p class="mini-label">Our story</p>
+          <h2 class="section-title left">Built around cleaner apparel presentation.</h2>
+          <p class="section-text">
+            Velora is set up as a professional fashion concept that prioritizes clothing photography, calm color palettes,
+            and thoughtful spacing. The goal is to create a shopping experience that feels curated and premium instead of noisy.
+          </p>
+          <div class="points">
+            <div>Homepage introduces the main collections and featured edits.</div>
+            <div>Category pages expand into deeper product and editorial browsing.</div>
+            <div>This page provides the support content real shoppers expect.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SHIPPING / RETURNS / SIZING CARDS -->
+    <section class="section">
+      <div class="container">
+        <div class="split-heading">
+          <div>
+            <p class="mini-label">Customer information</p>
+            <h2 class="section-title left">Shipping, returns, and sizing</h2>
+          </div>
+          <a href="#contact" class="text-link">Need more help?</a>
+        </div>
+
+        <div class="collection-links">
+          <a id="shipping" href="sale.html">
+            <h3>Shipping</h3>
+            <p>
+              Standard delivery in 3–5 business days, express options on selected orders, and tracking updates
+              after dispatch. International options can be highlighted here if you add them later.
+            </p>
+          </a>
+
+          <a id="returns" href="index.html#newsletter">
+            <h3>Returns</h3>
+            <p>
+              Easy returns within 14 days for unworn pieces in original condition and packaging. Use this area to
+              explain how refunds or store credit work.
+            </p>
+          </a>
+
+          <a id="sizing" href="women.html">
+            <h3>Sizing Guide</h3>
+            <p>
+              Use product descriptions and this guide to compare silhouettes, fits, and intended proportions.
+              You can later link to real size charts or images here.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRA INFO STRIP -->
+    <section class="section section-soft">
+      <div class="container">
+        <div class="trust-strip">
+          <div class="trust-item">
+            <h3>Apparel‑first imagery</h3>
+            <p>Clothing and fashion‑focused photos remain the center of each page.</p>
+          </div>
+          <div class="trust-item">
+            <h3>Clear structure</h3>
+            <p>Homepage, category pages, and this about page all support one journey.</p>
+          </div>
+          <div class="trust-item">
+            <h3>Helpful support</h3>
+            <p>Shipping, returns, and sizing information live together in one place.</p>
+          </div>
+          <div class="trust-item">
+            <h3>Brand consistency</h3>
+            <p>Typography, colors, and card styles match across the full site.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / SUPPORT FORM -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="newsletter-panel">
+          <div>
+            <p class="mini-label">Contact</p>
+            <h2 class="section-title left">Need help with an order or collection?</h2>
+            <p class="section-text">
+              Use this form to reach customer support for sizing questions, returns, shipping updates,
+              or guidance on pieces from the women’s, men’s, accessories, and sale pages.
+            </p>
+          </div>
+
+          <!-- Simple email form (non-functional, front-end only) -->
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter your email address" aria-label="Email address">
+            <button type="submit" class="btn btn-primary">Contact us</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER (same pattern as other pages) -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo" style="margin-bottom:1rem">Velora</div>
+          <p>
+            A professional fashion e-commerce concept focused on apparel-first imagery,
+            long-form browsing, and clear cross-linking between collections and editorial pages.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Shop</h4>
+          <a href="women.html">Women</a>
+          <a href="men.html">Men</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="sale.html">Sale</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Explore</h4>
+          <a href="about.html">Our Story</a>
+          <a href="index.html#new-arrivals">New Arrivals</a>
+          <a href="index.html#looks">Looks</a>
+          <a href="index.html#newsletter">Newsletter</a>
+        </div>
+
+        <div class="footer-links">
+          <h4>Support</h4>
+          <a href="#shipping">Shipping</a>
+          <a href="#returns">Returns</a>
+          <a href="#sizing">Sizing Guide</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Velora. All rights reserved.</span>
+        <span>Instagram • TikTok • Pinterest</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  const themeToggle = document.getElementById("themeToggle");
+  const html = document.documentElement;
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+    });
+  }
+  </script>
+</body>
+</html>
