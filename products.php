@@ -20,6 +20,9 @@ $result = mysqli_query($conn, "SELECT * FROM products");
     <p><?php echo $product['description']; ?></p>
 
     <p>Price: $<?php echo $product['price']; ?></p>
+    <a href="cart.php?add=<?php echo $product['id']; ?>">
+    Add To Cart
+</a>
 
     <hr>
 
