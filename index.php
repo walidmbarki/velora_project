@@ -27,6 +27,7 @@ include 'db.php';
 
       <nav>
         <ul class="nav-links">
+<<<<<<< HEAD
           <li><a href="index.php
   " class="active-link">Home</a></li>
           <li><a href="women.php
@@ -41,6 +42,26 @@ include 'db.php';
   ">About</a></li>
         </ul>
       </nav>
+=======
+          <li><a href="index.php" class="active-link">Home</a></li>
+          <li><a href="women.html">Women</a></li>
+          <li><a href="men.html">Men</a></li>
+          <li><a href="accessories.html">Accessories</a></li>
+          <li><a href="sale.html">Sale</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+  <?php if ($user): ?>
+    <span>Hello, <?= htmlspecialchars($user['name']) ?></span>
+    <a href="profile.php" class="btn btn-secondary">Profile</a>
+    <a href="logout.php" class="btn btn-secondary">Logout</a>
+  <?php else: ?>
+    <a href="login.php" class="btn btn-secondary">Login</a>
+    <a href="register.php" class="btn btn-primary">Register</a>
+  <?php endif; ?>
+</div>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
 
       <div class="nav-actions">
         <button class="icon-btn" aria-label="Search">⌕</button>
@@ -62,10 +83,15 @@ include 'db.php';
             This version is built to feel more professional through longer content sections, clearer navigation, cleaner visual hierarchy, and linked pages for women, men, accessories, sale, and brand information.
           </p>
           <div class="hero-actions">
+<<<<<<< HEAD
             <a href="women.php
     " class="btn btn-primary">Shop Women</a>
             <a href="men.php
     " class="btn btn-secondary">Shop Men</a>
+=======
+            <a href="women.html" class="btn btn-primary">Shop Women</a>
+            <a href="men.html" class="btn btn-secondary">Shop Men</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
           </div>
 
           <div class="hero-meta">
@@ -141,14 +167,22 @@ include 'db.php';
             <p class="mini-label">Collections</p>
             <h2 class="section-title left">Shop the main categories</h2>
           </div>
+<<<<<<< HEAD
           <a href="about.php
   " class="text-link">Read the brand story</a>
+=======
+          <a href="about.html" class="text-link">Read the brand story</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
         </div>
 
         <div class="category-feature-grid">
           <!-- WOMEN CATEGORY: Pinterest URL 3 -->
+<<<<<<< HEAD
           <a href="women.php
   " class="category-feature-card large">
+=======
+          <a href="women.html" class="category-feature-card large">
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
             <img
               src="https://i.pinimg.com/736x/75/70/6d/75706d3081c42363c1c058b78739f27d.jpg"
               alt="Women clothing collection with tailoring and dresses"
@@ -160,8 +194,12 @@ include 'db.php';
           </a>
 
           <!-- MEN CATEGORY: Pinterest URL 4 -->
+<<<<<<< HEAD
           <a href="men.php
   " class="category-feature-card">
+=======
+          <a href="men.html" class="category-feature-card">
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
             <img
               src="https://i.pinimg.com/736x/32/7f/8c/327f8cb12b91942d8dc2fb451e652bbc.jpg"
               alt="Men clothing collection with shirts and coats"
@@ -173,8 +211,12 @@ include 'db.php';
           </a>
 
           <!-- ACCESSORIES CATEGORY: URL 8 (UniversalClass fashion cover) -->
+<<<<<<< HEAD
           <a href="accessories.php
   " class="category-feature-card">
+=======
+          <a href="accessories.html" class="category-feature-card">
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
             <img
               src="https://m.universalclass.com/30/explore/crncovers/fashion-626086028.jpg"
               alt="Fashion accessories and apparel styling"
@@ -196,8 +238,12 @@ include 'db.php';
             <p class="mini-label">New arrivals</p>
             <h2 class="section-title left">Fresh pieces across the store</h2>
           </div>
+<<<<<<< HEAD
           <a href="sale.php
   " class="text-link">See current markdowns</a>
+=======
+          <a href="sale.html" class="text-link">See current markdowns</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
         </div>
 
         <div class="products-grid">
@@ -218,8 +264,12 @@ include 'db.php';
                 <span class="price">$118</span>
                 <span class="old-price">$146</span>
               </div>
+<<<<<<< HEAD
               <a href="women.php
       #featured-products" class="btn btn-secondary full-width">View Women</a>
+=======
+              <a href="women.html#featured-products" class="btn btn-secondary full-width">View Women</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
             </div>
           </article>
 
@@ -240,8 +290,12 @@ include 'db.php';
                 <span class="price">$67</span>
                 <span class="old-price">$86</span>
               </div>
+<<<<<<< HEAD
               <a href="men.php
       #featured-products" class="btn btn-secondary full-width">View Men</a>
+=======
+              <a href="men.html#featured-products" class="btn btn-secondary full-width">View Men</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
             </div>
           </article>
 
@@ -262,8 +316,12 @@ include 'db.php';
                 <span class="price">$72</span>
                 <span class="old-price">$95</span>
               </div>
+<<<<<<< HEAD
               <a href="women.php
       #new-season" class="btn btn-secondary full-width">Explore Edit</a>
+=======
+              <a href="women.html#new-season" class="btn btn-secondary full-width">Explore Edit</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
             </div>
           </article>
 
@@ -284,8 +342,12 @@ include 'db.php';
                 <span class="price">$144</span>
                 <span class="old-price">$188</span>
               </div>
+<<<<<<< HEAD
               <a href="men.php
       #outerwear-edit" class="btn btn-secondary full-width">Outerwear Edit</a>
+=======
+              <a href="men.html#outerwear-edit" class="btn btn-secondary full-width">Outerwear Edit</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
             </div>
           </article>
         </div>
@@ -317,8 +379,12 @@ include 'db.php';
             <div>Product cards include title, category, price, and direct links into the correct collection pages.</div>
             <div>Long-form sections make the store feel more complete and professional.</div>
           </div>
+<<<<<<< HEAD
           <a href="about.php
   " class="btn btn-primary">See Our Story</a>
+=======
+          <a href="about.html" class="btn btn-primary">See Our Story</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
         </div>
       </div>
     </section>
@@ -332,8 +398,12 @@ include 'db.php';
             <p class="mini-label">Looks</p>
             <h2 class="section-title left">Outfit inspiration across categories</h2>
           </div>
+<<<<<<< HEAD
           <a href="sale.php
   " class="text-link">Shop reduced pieces</a>
+=======
+          <a href="sale.html" class="text-link">Shop reduced pieces</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
         </div>
 
         <div class="looks-grid">
@@ -394,6 +464,7 @@ include 'db.php';
 
         <div class="footer-links">
           <h4>Shop</h4>
+<<<<<<< HEAD
           <a href="women.php
   ">Women</a>
           <a href="men.php
@@ -402,10 +473,17 @@ include 'db.php';
   ">Accessories</a>
           <a href="sale.php
   ">Sale</a>
+=======
+          <a href="women.html">Women</a>
+          <a href="men.html">Men</a>
+          <a href="accessories.html">Accessories</a>
+          <a href="sale.html">Sale</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
         </div>
 
         <div class="footer-links">
           <h4>Explore</h4>
+<<<<<<< HEAD
           <a href="about.php
   ">Our Story</a>
           <a href="index.php
@@ -414,10 +492,17 @@ include 'db.php';
   #looks">Looks</a>
           <a href="index.php
   #newsletter">Newsletter</a>
+=======
+          <a href="about.html">Our Story</a>
+          <a href="index.php#new-arrivals">New Arrivals</a>
+          <a href="index.php#looks">Looks</a>
+          <a href="index.php#newsletter">Newsletter</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
         </div>
 
         <div class="footer-links">
           <h4>Support</h4>
+<<<<<<< HEAD
           <a href="about.php
   #shipping">Shipping</a>
           <a href="about.php
@@ -426,6 +511,12 @@ include 'db.php';
   #sizing">Sizing Guide</a>
           <a href="about.php
   #contact">Contact</a>
+=======
+          <a href="about.html#shipping">Shipping</a>
+          <a href="about.html#returns">Returns</a>
+          <a href="about.html#sizing">Sizing Guide</a>
+          <a href="about.html#contact">Contact</a>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
         </div>
       </div>
 
@@ -438,13 +529,25 @@ include 'db.php';
 
   <script>
   const themeToggle = document.getElementById("themeToggle");
+<<<<<<< HEAD
   const p = document.documentElement;
   if (themeToggle) {
     themeToggle.addEventListener("click", () => {
       const current = php.getAttribute("data-theme");
       php.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+=======
+  const html = document.documentElement;
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const current = html.getAttribute("data-theme");
+      html.setAttribute("data-theme", current === "dark" ? "light" : "dark");
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
     });
   }
   </script>
 </body>
+<<<<<<< HEAD
 </>
+=======
+</html>
+>>>>>>> ea3e5a7971f45ee872bcf3272991f877ec1bf1ee
