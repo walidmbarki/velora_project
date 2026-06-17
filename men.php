@@ -14,7 +14,7 @@
 
   <header>
     <div class="container navbar">
-      <a href="index.html" class="logo" aria-label="Velora home">
+      <a href="index.php" class="logo" aria-label="Velora home">
         <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
           <path d="M12 14L32 50L52 14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M22 14L32 32L42 14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -24,19 +24,20 @@
 
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="women.html">Women</a></li>
-          <li><a href="men.html" class="active-link">Men</a></li>
-          <li><a href="accessories.html">Accessories</a></li>
-          <li><a href="sale.html">Sale</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="women.php">Women</a></li>
+          <li><a href="men.php" class="active-link">Men</a></li>
+          <li><a href="accessories.php">Accessories</a></li>
+          <li><a href="sale.php">Sale</a></li>
+          <li><a href="products.php">Products</a></li>
+          <li><a href="about.php">About</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <button class="icon-btn" aria-label="Search">⌕</button>
         <button class="icon-btn" aria-label="Wishlist">♡</button>
-        <button class="icon-btn" aria-label="Cart">🛍</button>
+        <a href="cart.php" class="icon-btn" aria-label="Cart">🛍</a>
         <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
       </div>
     </div>
@@ -53,8 +54,8 @@
             Explore premium shirts, jackets, trousers, and modern basics designed for clean daily dressing with a luxury-inspired, calm aesthetic.
           </p>
           <div class="hero-actions">
-            <a href="#featured-products" class="btn btn-primary">Shop men</a>
-            <a href="index.html" class="btn btn-secondary">Back to home</a>
+<a href="products.php" class="btn btn-primary">Shop Products</a>
+            <a href="index.php" class="btn btn-secondary">Back to home</a>
           </div>
 
           <div class="hero-meta">
@@ -105,7 +106,7 @@
             <p class="mini-label">Featured men’s collection</p>
             <h2 class="section-title left">Best pieces on this page</h2>
           </div>
-          <a href="sale.html" class="text-link">See men’s sale</a>
+          <a href="sale.php" class="text-link">See men’s sale</a>
         </div>
 
         <div class="products-grid">
@@ -126,7 +127,7 @@
                 <span class="price">$67</span>
                 <span class="old-price">$86</span>
               </div>
-              <a href="about.html#sizing" class="btn btn-secondary full-width">Sizing & fit info</a>
+              <a href="about.php#sizing" class="btn btn-secondary full-width">Sizing & fit info</a>
             </div>
           </article>
 
@@ -147,7 +148,7 @@
                 <span class="price">$110</span>
                 <span class="old-price">$149</span>
               </div>
-              <a href="sale.html" class="btn btn-secondary full-width">Check if on sale</a>
+              <a href="sale.php" class="btn btn-secondary full-width">Check if on sale</a>
             </div>
           </article>
 
@@ -168,7 +169,7 @@
                 <span class="price">$78</span>
                 <span class="old-price">$99</span>
               </div>
-              <a href="index.html#looks" class="btn btn-secondary full-width">See styled looks</a>
+              <a href="index.php#looks" class="btn btn-secondary full-width">See styled looks</a>
             </div>
           </article>
 
@@ -189,7 +190,7 @@
                 <span class="price">$72</span>
                 <span class="old-price">$91</span>
               </div>
-              <a href="women.html" class="btn btn-secondary full-width">See women’s knitwear</a>
+              <a href="women.php" class="btn btn-secondary full-width">See women’s knitwear</a>
             </div>
           </article>
 
@@ -210,7 +211,7 @@
                 <span class="price">$144</span>
                 <span class="old-price">$188</span>
               </div>
-              <a href="about.html#shipping" class="btn btn-secondary full-width">Shipping info</a>
+              <a href="about.php#shipping" class="btn btn-secondary full-width">Shipping info</a>
             </div>
           </article>
 
@@ -231,7 +232,7 @@
                 <span class="price">$138</span>
                 <span class="old-price">$176</span>
               </div>
-              <a href="index.html" class="btn btn-secondary full-width">Back to homepage</a>
+              <a href="index.php" class="btn btn-secondary full-width">Back to homepage</a>
             </div>
           </article>
 
@@ -252,7 +253,7 @@
                 <span class="price">$44</span>
                 <span class="old-price">$59</span>
               </div>
-              <a href="accessories.html" class="btn btn-secondary full-width">Add accessories</a>
+              <a href="accessories.php" class="btn btn-secondary full-width">Add accessories</a>
             </div>
           </article>
 
@@ -273,7 +274,7 @@
                 <span class="price">$92</span>
                 <span class="old-price">$130</span>
               </div>
-              <a href="sale.html" class="btn btn-secondary full-width">View sale</a>
+              <a href="sale.php" class="btn btn-secondary full-width">View sale</a>
             </div>
           </article>
         </div>
@@ -306,7 +307,7 @@
             <div>Product cards are grouped clearly under the men’s category.</div>
             <div>Related links connect this page to other sections of the website.</div>
           </div>
-          <a href="about.html" class="btn btn-primary">Read about Velora</a>
+          <a href="about.php" class="btn btn-primary">Read about Velora</a>
         </div>
       </div>
     </section>
@@ -319,19 +320,19 @@
             <p class="mini-label">Related destinations</p>
             <h2 class="section-title left">Continue browsing</h2>
           </div>
-          <a href="about.html#sizing" class="text-link">Sizing guide</a>
+          <a href="about.php#sizing" class="text-link">Sizing guide</a>
         </div>
 
         <div class="collection-links">
-          <a href="women.html">
+          <a href="women.php">
             <h3>See the women’s collection</h3>
             <p>Move into dresses, tailoring, and knitwear with the same brand tone.</p>
           </a>
-          <a href="accessories.html">
+          <a href="accessories.php">
             <h3>Complete the outfit</h3>
             <p>Add bags and accessories that suit the men’s collection.</p>
           </a>
-          <a href="sale.html">
+          <a href="sale.php">
             <h3>Browse the sale section</h3>
             <p>Continue into current markdowns without leaving the site flow.</p>
           </a>
@@ -373,26 +374,26 @@
 
         <div class="footer-links">
           <h4>Shop</h4>
-          <a href="women.html">Women</a>
-          <a href="men.html">Men</a>
-          <a href="accessories.html">Accessories</a>
-          <a href="sale.html">Sale</a>
+          <a href="women.php">Women</a>
+          <a href="men.php">Men</a>
+          <a href="accessories.php">Accessories</a>
+          <a href="sale.php">Sale</a>
         </div>
 
         <div class="footer-links">
           <h4>Explore</h4>
-          <a href="about.html">Our Story</a>
-          <a href="index.html#new-arrivals">New Arrivals</a>
-          <a href="index.html#looks">Looks</a>
-          <a href="index.html#newsletter">Newsletter</a>
+          <a href="about.php">Our Story</a>
+          <a href="index.php#new-arrivals">New Arrivals</a>
+          <a href="index.php#looks">Looks</a>
+          <a href="index.php#newsletter">Newsletter</a>
         </div>
 
         <div class="footer-links">
           <h4>Support</h4>
-          <a href="about.html#shipping">Shipping</a>
-          <a href="about.html#returns">Returns</a>
-          <a href="about.html#sizing">Sizing Guide</a>
-          <a href="about.html#contact">Contact</a>
+          <a href="about.php#shipping">Shipping</a>
+          <a href="about.php#returns">Returns</a>
+          <a href="about.php#sizing">Sizing Guide</a>
+          <a href="about.php#contact">Contact</a>
         </div>
       </div>
 

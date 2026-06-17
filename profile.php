@@ -23,11 +23,11 @@ $user = current_user();
       <nav>
         <ul class="nav-links">
           <li><a href="index.php">Home</a></li>
-          <li><a href="women.html">Women</a></li>
-          <li><a href="men.html">Men</a></li>
-          <li><a href="accessories.html">Accessories</a></li>
-          <li><a href="sale.html">Sale</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="women.php">Women</a></li>
+          <li><a href="men.php">Men</a></li>
+          <li><a href="accessories.php">Accessories</a></li>
+          <li><a href="sale.php">Sale</a></li>
+          <li><a href="about.php">About</a></li>
         </ul>
       </nav>
       <div class="nav-actions">

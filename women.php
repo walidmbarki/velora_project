@@ -1,5 +1,5 @@
 <?php
-require_once 'config/db.php';
+require_once 'includes/db.php';
 ?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
@@ -17,7 +17,7 @@ require_once 'config/db.php';
 
   <header>
     <div class="container navbar">
-      <a href="index.html" class="logo" aria-label="Velora home">
+      <a href="index.php" class="logo" aria-label="Velora home">
         <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
           <path d="M12 14L32 50L52 14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M22 14L32 32L42 14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -27,19 +27,20 @@ require_once 'config/db.php';
 
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="women.html" class="active-link">Women</a></li>
-          <li><a href="men.html">Men</a></li>
-          <li><a href="accessories.html">Accessories</a></li>
-          <li><a href="sale.html">Sale</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="women.php" class="active-link">Women</a></li>
+          <li><a href="men.php">Men</a></li>
+          <li><a href="accessories.php">Accessories</a></li>
+          <li><a href="sale.php">Sale</a></li>
+<li><a href="products.php">Products</a></li>
+<li><a href="about.php">About</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <button class="icon-btn" aria-label="Search">⌕</button>
         <button class="icon-btn" aria-label="Wishlist">♡</button>
-        <button class="icon-btn" aria-label="Cart">🛍</button>
+        <a href="cart.php" class="icon-btn" aria-label="Cart">🛍</a>
         <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
       </div>
     </div>
@@ -56,8 +57,8 @@ require_once 'config/db.php';
             Discover structured blazers, fluid dresses, knitwear, and refined trousers designed for confident everyday dressing with a modern, editorial tone.
           </p>
           <div class="hero-actions">
-            <a href="#featured-products" class="btn btn-primary">Shop women</a>
-            <a href="index.html" class="btn btn-secondary">Back to home</a>
+            <a href="products.php" class="btn btn-primary">Shop Products</a>
+            <a href="index.php" class="btn btn-secondary">Back to home</a>
           </div>
 
           <div class="hero-meta">
@@ -108,7 +109,7 @@ require_once 'config/db.php';
             <p class="mini-label">Featured women’s collection</p>
             <h2 class="section-title left">Best pieces on this page</h2>
           </div>
-          <a href="sale.html" class="text-link">Go to sale</a>
+          <a href="sale.php" class="text-link">Go to sale</a>
         </div>
 
         <div class="products-grid">
@@ -129,7 +130,7 @@ require_once 'config/db.php';
                 <span class="price">$118</span>
                 <span class="old-price">$146</span>
               </div>
-              <a href="about.html#sizing" class="btn btn-secondary full-width">View sizing info</a>
+              <a href="about.php#sizing" class="btn btn-secondary full-width">View sizing info</a>
             </div>
           </article>
 
@@ -150,7 +151,7 @@ require_once 'config/db.php';
                 <span class="price">$96</span>
                 <span class="old-price">$128</span>
               </div>
-              <a href="sale.html" class="btn btn-secondary full-width">Check if on sale</a>
+              <a href="sale.php" class="btn btn-secondary full-width">Check if on sale</a>
             </div>
           </article>
 
@@ -171,7 +172,7 @@ require_once 'config/db.php';
                 <span class="price">$72</span>
                 <span class="old-price">$95</span>
               </div>
-              <a href="index.html#looks" class="btn btn-secondary full-width">See styling ideas</a>
+              <a href="index.php#looks" class="btn btn-secondary full-width">See styling ideas</a>
             </div>
           </article>
 
@@ -192,7 +193,7 @@ require_once 'config/db.php';
                 <span class="price">$74</span>
                 <span class="old-price">$96</span>
               </div>
-              <a href="about.html#returns" class="btn btn-secondary full-width">Returns & exchanges</a>
+              <a href="about.php#returns" class="btn btn-secondary full-width">Returns & exchanges</a>
             </div>
           </article>
 
@@ -213,7 +214,7 @@ require_once 'config/db.php';
                 <span class="price">$132</span>
                 <span class="old-price">$168</span>
               </div>
-              <a href="men.html" class="btn btn-secondary full-width">See men’s outerwear</a>
+              <a href="men.php" class="btn btn-secondary full-width">See men’s outerwear</a>
             </div>
           </article>
 
@@ -234,7 +235,7 @@ require_once 'config/db.php';
                 <span class="price">$104</span>
                 <span class="old-price">$139</span>
               </div>
-              <a href="accessories.html" class="btn btn-secondary full-width">Add accessories</a>
+              <a href="accessories.php" class="btn btn-secondary full-width">Add accessories</a>
             </div>
           </article>
         </div>
@@ -268,7 +269,7 @@ require_once 'config/db.php';
             <div>Product cards are grouped under one, clear women’s section.</div>
             <div>Links connect this page to men’s, accessories, sale, and support content.</div>
           </div>
-          <a href="about.html" class="btn btn-primary">Read about Velora</a>
+          <a href="about.php" class="btn btn-primary">Read about Velora</a>
         </div>
       </div>
     </section>
@@ -281,19 +282,19 @@ require_once 'config/db.php';
             <p class="mini-label">Related destinations</p>
             <h2 class="section-title left">Continue browsing</h2>
           </div>
-          <a href="about.html#sizing" class="text-link">Sizing guide</a>
+          <a href="about.php#sizing" class="text-link">Sizing guide</a>
         </div>
 
         <div class="collection-links">
-          <a href="men.html">
+          <a href="men.php">
             <h3>See the men’s collection</h3>
             <p>Explore clean layering, outerwear, and understated staples.</p>
           </a>
-          <a href="accessories.html">
+          <a href="accessories.php">
             <h3>Add accessories</h3>
             <p>Pair women’s looks with bags and finishing details.</p>
           </a>
-          <a href="sale.html">
+          <a href="sale.php">
             <h3>Shop reduced women’s pieces</h3>
             <p>Move into discounted items without breaking the browsing flow.</p>
           </a>
@@ -332,27 +333,28 @@ require_once 'config/db.php';
         </div>
 
         <div class="footer-links">
-          <h4>Shop</h4>
-          <a href="women.html">Women</a>
-          <a href="men.html">Men</a>
-          <a href="accessories.html">Accessories</a>
-          <a href="sale.html">Sale</a>
+<h4>Shop</h4>
+<a href="women.php">Women</a>
+<a href="men.php">Men</a>
+<a href="accessories.php">Accessories</a>
+<a href="sale.php">Sale</a>
+<a href="products.php">Products</a>
         </div>
 
         <div class="footer-links">
           <h4>Explore</h4>
-          <a href="about.html">Our Story</a>
-          <a href="index.html#new-arrivals">New Arrivals</a>
-          <a href="index.html#looks">Looks</a>
-          <a href="index.html#newsletter">Newsletter</a>
+          <a href="about.php">Our Story</a>
+          <a href="index.php#new-arrivals">New Arrivals</a>
+          <a href="index.php#looks">Looks</a>
+          <a href="index.php#newsletter">Newsletter</a>
         </div>
 
         <div class="footer-links">
           <h4>Support</h4>
-          <a href="about.html#shipping">Shipping</a>
-          <a href="about.html#returns">Returns</a>
-          <a href="about.html#sizing">Sizing Guide</a>
-          <a href="about.html#contact">Contact</a>
+          <a href="about.php#shipping">Shipping</a>
+          <a href="about.php#returns">Returns</a>
+          <a href="about.php#sizing">Sizing Guide</a>
+          <a href="about.php#contact">Contact</a>
         </div>
       </div>
 

@@ -1,27 +1,80 @@
 <?php
-require_once '../config/db.php';
+require_once '../includes/db.php';
 
-$result = mysqli_query($conn, "SELECT * FROM orders ORDER BY created_at DESC");
+$stmt = $pdo->query("SELECT * FROM orders ORDER BY created_at DESC");
+$orders = $stmt->fetchAll();
 ?>
 
-<h1>Admin - Manage Orders</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orders • Velora Admin</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
 
-<table border="1" cellpadding="10">
+<header>
+    <div class="container navbar">
+        <a href="../index.php" class="logo">Velora</a>
+    </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container">
+
+<div class="split-heading">
+    <div>
+        <p class="mini-label">Admin Panel</p>
+        <h1 class="section-title left">Manage Orders</h1>
+    </div>
+
+    <a href="dashboard.php" class="btn btn-secondary">
+        Dashboard
+    </a>
+</div>
+
+<div class="product-card">
+<div class="product-info">
+
+<?php if (count($orders) === 0) { ?>
+
+    <p>No orders found.</p>
+
+<?php } else { ?>
+
+<table border="1" cellpadding="10" cellspacing="0" style="width:100%;">
+
     <tr>
         <th>Order ID</th>
         <th>User ID</th>
-        <th>Total Price</th>
-        <th>Status</th>
+        <th>Total</th>
         <th>Date</th>
     </tr>
 
-    <?php while($order = mysqli_fetch_assoc($result)) { ?>
-        <tr>
-            <td><?php echo $order['id']; ?></td>
-            <td><?php echo $order['user_id']; ?></td>
-            <td>$<?php echo $order['total_price']; ?></td>
-            <td><?php echo $order['status']; ?></td>
-            <td><?php echo $order['created_at']; ?></td>
-        </tr>
+    <?php foreach ($orders as $order) { ?>
+
+    <tr>
+        <td><?php echo $order['id']; ?></td>
+        <td><?php echo $order['user_id']; ?></td>
+        <td>$<?php echo $order['total']; ?></td>
+        <td><?php echo $order['created_at']; ?></td>
+    </tr>
+
     <?php } ?>
+
 </table>
+
+<?php } ?>
+
+</div>
+</div>
+
+</div>
+</section>
+</main>
+
+</body>
+</html>

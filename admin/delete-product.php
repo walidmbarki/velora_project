@@ -1,14 +1,11 @@
 <?php
-require_once '../config/db.php';
+require_once '../includes/db.php';
 
-$id = $_GET['id'] ?? 0;
+$id = (int) ($_GET['id'] ?? 0);
 
-$sql = "DELETE FROM products WHERE id = $id";
+$stmt = $pdo->prepare("DELETE FROM products WHERE id = ?");
+$stmt->execute([$id]);
 
-if (mysqli_query($conn, $sql)) {
-    header("Location: products.php");
-    exit;
-} else {
-    echo "Error deleting product: " . mysqli_error($conn);
-}
+header("Location: products.php");
+exit;
 ?>

@@ -14,7 +14,7 @@
 
   <header>
     <div class="container navbar">
-      <a href="index.html" class="logo" aria-label="Velora home">
+      <a href="index.php" class="logo" aria-label="Velora home">
         <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
           <path d="M12 14L32 50L52 14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M22 14L32 32L42 14" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -24,19 +24,20 @@
 
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="women.html">Women</a></li>
-          <li><a href="men.html">Men</a></li>
-          <li><a href="accessories.html">Accessories</a></li>
-          <li><a href="sale.html">Sale</a></li>
-          <li><a href="about.html" class="active-link">About</a></li>
+          <li><a href="index.php
+  ">Home</a></li>
+          <li><a href="women.php">Women</a></li>
+          <li><a href="men.php">Men</a></li>
+          <li><a href="accessories.php">Accessories</a></li>
+          <li><a href="sale.php">Sale</a></li>
+          <li><a href="about.php" class="active-link">About</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <button class="icon-btn" aria-label="Search">⌕</button>
         <button class="icon-btn" aria-label="Wishlist">♡</button>
-        <button class="icon-btn" aria-label="Cart">🛍</button>
+        <a href="cart.php" class="icon-btn" aria-label="Cart">🛍</a>
         <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
       </div>
     </div>
@@ -54,8 +55,9 @@
             consistent clothing imagery, and clear navigation between collections, looks, and support pages.
           </p>
           <div class="hero-actions">
-            <a href="index.html" class="btn btn-primary">Go to homepage</a>
-            <a href="women.html" class="btn btn-secondary">Start shopping</a>
+            <a href="index.php
+    " class="btn btn-primary">Go to homepage</a>
+            <a href="women.php" class="btn btn-secondary">Start shopping</a>
           </div>
         </div>
 
@@ -113,7 +115,7 @@
         </div>
 
         <div class="collection-links">
-          <a id="shipping" href="sale.html">
+          <a id="shipping" href="sale.php">
             <h3>Shipping</h3>
             <p>
               Standard delivery in 3–5 business days, express options on selected orders, and tracking updates
@@ -121,7 +123,8 @@
             </p>
           </a>
 
-          <a id="returns" href="index.html#newsletter">
+          <a id="returns" href="index.php
+  #newsletter">
             <h3>Returns</h3>
             <p>
               Easy returns within 14 days for unworn pieces in original condition and packaging. Use this area to
@@ -129,7 +132,7 @@
             </p>
           </a>
 
-          <a id="sizing" href="women.html">
+          <a id="sizing" href="women.php">
             <h3>Sizing Guide</h3>
             <p>
               Use product descriptions and this guide to compare silhouettes, fits, and intended proportions.
@@ -201,18 +204,21 @@
 
         <div class="footer-links">
           <h4>Shop</h4>
-          <a href="women.html">Women</a>
-          <a href="men.html">Men</a>
-          <a href="accessories.html">Accessories</a>
-          <a href="sale.html">Sale</a>
+          <a href="women.php">Women</a>
+          <a href="men.php">Men</a>
+          <a href="accessories.php">Accessories</a>
+          <a href="sale.php">Sale</a>
         </div>
 
         <div class="footer-links">
           <h4>Explore</h4>
-          <a href="about.html">Our Story</a>
-          <a href="index.html#new-arrivals">New Arrivals</a>
-          <a href="index.html#looks">Looks</a>
-          <a href="index.html#newsletter">Newsletter</a>
+          <a href="about.php">Our Story</a>
+          <a href="index.php
+  #new-arrivals">New Arrivals</a>
+          <a href="index.php
+  #looks">Looks</a>
+          <a href="index.php
+  #newsletter">Newsletter</a>
         </div>
 
         <div class="footer-links">
