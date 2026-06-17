@@ -1,33 +1,68 @@
 <?php
-require_once 'config/db.php';
+require_once 'includes/db.php';
 
-$result = mysqli_query(
-    $conn,
-    "SELECT * FROM orders ORDER BY created_at DESC"
-);
+$stmt = $pdo->query("
+    SELECT * 
+    FROM orders
+    ORDER BY created_at DESC
+");
+
+$orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-<h1>Orders</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders • Velora</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-<table border="1" cellpadding="10">
-    <tr>
-        <th>Order ID</th>
-        <th>User ID</th>
-        <th>Total Price</th>
-        <th>Status</th>
-        <th>Date</th>
-    </tr>
+<header>
+    <div class="container navbar">
+        <a href="index.php" class="logo">Velora</a>
 
-    <?php while($order = mysqli_fetch_assoc($result)) { ?>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="products.php">Products</a></li>
+                <li><a href="cart.php">Cart</a></li>
+                <li><a href="orders.php">Orders</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    <tr>
-        <td><?php echo $order['id']; ?></td>
-        <td><?php echo $order['user_id']; ?></td>
-        <td>$<?php echo $order['total_price']; ?></td>
-        <td><?php echo $order['status']; ?></td>
-        <td><?php echo $order['created_at']; ?></td>
-    </tr>
+<main>
+<section class="section">
+<div class="container">
 
-    <?php } ?>
+    <p class="mini-label">Orders</p>
+    <h1 class="section-title left">Order History</h1>
 
-</table>
+    <table border="1" cellpadding="10" style="width:100%; margin-top:20px;">
+        <tr>
+            <th>Order ID</th>
+            <th>User ID</th>
+            <th>Total</th>
+            <th>Date</th>
+        </tr>
+
+        <?php foreach ($orders as $order): ?>
+        <tr>
+            <td><?php echo $order['id']; ?></td>
+            <td><?php echo $order['user_id']; ?></td>
+            <td>$<?php echo number_format($order['total'], 2); ?></td>
+            <td><?php echo $order['created_at']; ?></td>
+        </tr>
+        <?php endforeach; ?>
+
+    </table>
+
+</div>
+</section>
+</main>
+
+</body>
+</html>

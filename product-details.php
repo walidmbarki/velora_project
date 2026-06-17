@@ -1,10 +1,12 @@
 <?php
-require_once 'config/db.php';
+require_once 'includes/db.php';
 
-$id = $_GET['id'] ?? 0;
+$id = (int) ($_GET['id'] ?? 0);
 
-$result = mysqli_query($conn, "SELECT * FROM products WHERE id = $id");
-$product = mysqli_fetch_assoc($result);
+$stmt = $pdo->prepare("SELECT * FROM products WHERE id = ?");
+$stmt->execute([$id]);
+
+$product = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$product) {
     echo "Product not found.";
@@ -13,18 +15,82 @@ if (!$product) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title><?php echo $product['name']; ?></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo htmlspecialchars($product['name']); ?> • Velora</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h1><?php echo $product['name']; ?></h1>
-<p><?php echo $product['description']; ?></p>
-<p>Price: $<?php echo $product['price']; ?></p>
-<p>Stock: <?php echo $product['stock']; ?></p>
+<header>
+    <div class="container navbar">
+        <a href="index.php" class="logo">Velora</a>
 
-<a href="products.php">Back to products</a>
+<nav>
+    <ul class="nav-links">
+        <li><a href="index.php">Home</a></li>
+        <li><a href="women.php">Women</a></li>
+        <li><a href="men.php">Men</a></li>
+        <li><a href="accessories.php">Accessories</a></li>
+        <li><a href="sale.php">Sale</a></li>
+        <li><a href="products.php">Products</a></li>
+        <li><a href="about.php">About</a></li>
+        <li><a href="cart.php">Cart</a></li>
+    </ul>
+</nav>
+    </div>
+</header>
+
+<main>
+<section class="section">
+<div class="container">
+
+    <div class="product-card">
+        <div class="product-info">
+
+            <div class="product-category">
+                Product ID: <?php echo $product['id']; ?>
+            </div>
+
+            <h1>
+                <?php echo htmlspecialchars($product['name']); ?>
+            </h1>
+
+            <p class="product-note">
+                <?php echo htmlspecialchars($product['description']); ?>
+            </p>
+
+            <h2>
+                $<?php echo htmlspecialchars($product['price']); ?>
+            </h2>
+
+            <p class="product-note">
+                Stock: <?php echo htmlspecialchars($product['stock']); ?>
+            </p>
+
+            <a
+                href="cart.php?add=<?php echo $product['id']; ?>"
+                class="btn btn-primary">
+                Add To Cart
+            </a>
+
+            <br><br>
+
+            <a
+                href="products.php"
+                class="btn btn-secondary">
+                Back to Products
+            </a>
+
+        </div>
+    </div>
+
+</div>
+</section>
+</main>
 
 </body>
 </html>

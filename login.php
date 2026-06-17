@@ -14,30 +14,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = 'Valid email is required.';
     }
+
     if ($password === '') {
         $errors[] = 'Password is required.';
     }
 
     if (empty($errors)) {
+
         $stmt = $pdo->prepare(
-          'SELECT id, name, email, password_hash, role FROM users WHERE email = ?'
+            'SELECT id, name, email, password, role FROM users WHERE email = ?'
         );
+
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
-        if ($user && password_verify($password, $user['password_hash'])) {
+        if ($user && password_verify($password, $user['password'])) {
+
             session_regenerate_id(true);
-            unset($user['password_hash']);
+
+            unset($user['password']);
+
             $_SESSION['user'] = $user;
 
             header('Location: profile.php');
             exit;
+
         } else {
             $errors[] = 'Invalid email or password.';
         }
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,8 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
   <main class="section auth-section">
     <div class="container auth-card" style="max-width:480px;">
+
       <h1 class="section-title left">Sign in to Velora</h1>
 
       <?php if ($errors): ?>
@@ -59,17 +69,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <?php endif; ?>
 
       <form method="post" class="newsletter-form" style="flex-direction:column; gap:1rem;">
-        <input type="email" name="email" placeholder="Email address"
-               value="<?= htmlspecialchars($email) ?>" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit" class="btn btn-primary">Log in</button>
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Email address"
+          value="<?= htmlspecialchars($email) ?>"
+          required
+        >
+
+        <input
+          type="password"
+          name="password"
+          placeholder="Password"
+          required
+        >
+
+        <button type="submit" class="btn btn-primary">
+          Log in
+        </button>
+
       </form>
 
       <p style="margin-top:1rem;">
         Don’t have an account?
         <a href="register.php" class="text-link">Create one</a>
       </p>
+
     </div>
   </main>
+
 </body>
 </html>

@@ -1,10 +1,10 @@
 <?php
 $host = 'localhost';
-$db   = 'velora_db'; // you will create this database in phpMyAdmin
+$db   = 'php_project';
 $user = 'root';
-$pass = 'root'; // MAMP default is root / root
+$pass = '';
 
-$dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+$dsn = "mysql:host=$host;port=3307;dbname=$db;charset=utf8mb4";
 
 $options = [
   PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

@@ -1,10 +1,11 @@
-<?php
-require_once '../config/db.php';
+ <?php
+require_once '../includes/db.php';
 
-$id = $_GET['id'] ?? 0;
+$id = (int) ($_GET['id'] ?? 0);
 
-$result = mysqli_query($conn, "SELECT * FROM products WHERE id = $id");
-$product = mysqli_fetch_assoc($result);
+$stmt = $pdo->prepare("SELECT * FROM products WHERE id = ?");
+$stmt->execute([$id]);
+$product = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if (!$product) {
     echo "Product not found.";
@@ -17,39 +18,56 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $price = $_POST['price'];
     $stock = $_POST['stock'];
 
-    $sql = "UPDATE products SET 
-            name = '$name',
-            description = '$description',
-            price = '$price',
-            stock = '$stock'
-            WHERE id = $id";
+    $stmt = $pdo->prepare("
+        UPDATE products 
+        SET name = ?, description = ?, price = ?, stock = ?
+        WHERE id = ?
+    ");
 
-    if (mysqli_query($conn, $sql)) {
-        header("Location: products.php");
-        exit;
-    } else {
-        echo "Error updating product: " . mysqli_error($conn);
-    }
+    $stmt->execute([$name, $description, $price, $stock, $id]);
+
+    header("Location: products.php");
+    exit;
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Product • Velora</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<main>
+<section class="section">
+<div class="container">
 
 <h1>Edit Product</h1>
 
 <form method="POST">
     <label>Name:</label><br>
-    <input type="text" name="name" value="<?php echo $product['name']; ?>" required><br><br>
+    <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" required><br><br>
 
     <label>Description:</label><br>
-    <textarea name="description" required><?php echo $product['description']; ?></textarea><br><br>
+    <textarea name="description" required><?php echo htmlspecialchars($product['description']); ?></textarea><br><br>
 
     <label>Price:</label><br>
-    <input type="number" step="0.01" name="price" value="<?php echo $product['price']; ?>" required><br><br>
+    <input type="number" step="0.01" name="price" value="<?php echo htmlspecialchars($product['price']); ?>" required><br><br>
 
     <label>Stock:</label><br>
-    <input type="number" name="stock" value="<?php echo $product['stock']; ?>" required><br><br>
+    <input type="number" name="stock" value="<?php echo htmlspecialchars($product['stock']); ?>" required><br><br>
 
-    <button type="submit">Update Product</button>
+    <button type="submit" class="btn btn-primary">Update Product</button>
 </form>
 
 <br>
-<a href="products.php">Back to Products</a>
+<a href="products.php" class="btn btn-secondary">Back to Products</a>
+
+</div>
+</section>
+</main>
+
+</body>
+</html>
