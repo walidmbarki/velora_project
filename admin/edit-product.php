@@ -1,4 +1,4 @@
- <?php
+<?php
 require_once '../includes/db.php';
 
 $id = (int) ($_GET['id'] ?? 0);
@@ -17,14 +17,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
     $price = $_POST['price'];
     $stock = $_POST['stock'];
+    $image = $_POST['image'];
 
     $stmt = $pdo->prepare("
         UPDATE products 
-        SET name = ?, description = ?, price = ?, stock = ?
+        SET name = ?, description = ?, price = ?, stock = ?, image = ?
         WHERE id = ?
     ");
 
-    $stmt->execute([$name, $description, $price, $stock, $id]);
+    $stmt->execute([$name, $description, $price, $stock, $image, $id]);
 
     header("Location: products.php");
     exit;
@@ -38,32 +39,61 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>Edit Product • Velora</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
+
+<header>
+    <div class="container navbar">
+        <a href="../index.php" class="logo">Velora</a>
+    </div>
+</header>
 
 <main>
 <section class="section">
 <div class="container">
 
-<h1>Edit Product</h1>
+    <div class="split-heading">
+        <div>
+            <p class="mini-label">Admin Panel</p>
+            <h1 class="section-title left">Edit Product</h1>
+        </div>
 
-<form method="POST">
-    <label>Name:</label><br>
-    <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" required><br><br>
+        <a href="products.php" class="btn btn-secondary">Back to Products</a>
+    </div>
 
-    <label>Description:</label><br>
-    <textarea name="description" required><?php echo htmlspecialchars($product['description']); ?></textarea><br><br>
+    <?php if (!empty($product['image'])): ?>
+        <div style="margin-bottom:25px;">
+            <img
+                src="<?php echo htmlspecialchars($product['image']); ?>"
+                alt="<?php echo htmlspecialchars($product['name']); ?>"
+                style="width:180px; height:230px; object-fit:cover; border-radius:12px;"
+            >
+        </div>
+    <?php endif; ?>
 
-    <label>Price:</label><br>
-    <input type="number" step="0.01" name="price" value="<?php echo htmlspecialchars($product['price']); ?>" required><br><br>
+    <form method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" value="<?php echo htmlspecialchars($product['name']); ?>" required><br><br>
 
-    <label>Stock:</label><br>
-    <input type="number" name="stock" value="<?php echo htmlspecialchars($product['stock']); ?>" required><br><br>
+        <label>Description:</label><br>
+        <textarea name="description" required><?php echo htmlspecialchars($product['description']); ?></textarea><br><br>
 
-    <button type="submit" class="btn btn-primary">Update Product</button>
-</form>
+        <label>Price:</label><br>
+        <input type="number" step="0.01" name="price" value="<?php echo htmlspecialchars($product['price']); ?>" required><br><br>
 
-<br>
-<a href="products.php" class="btn btn-secondary">Back to Products</a>
+        <label>Stock:</label><br>
+        <input type="number" name="stock" value="<?php echo htmlspecialchars($product['stock']); ?>" required><br><br>
+
+        <label>Image URL:</label><br>
+        <input
+            type="text"
+            name="image"
+            value="<?php echo htmlspecialchars($product['image'] ?? ''); ?>"
+            placeholder="https://picsum.photos/seed/product/600/800"
+        ><br><br>
+
+        <button type="submit" class="btn btn-primary">Update Product</button>
+    </form>
 
 </div>
 </section>

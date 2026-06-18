@@ -54,7 +54,7 @@ if (isset($_POST['place_order'])) {
 
     $_SESSION['cart'] = [];
 
-    header("Location: orders.php");
+    header("Location: order-success.php");
     exit;
 }
 ?>

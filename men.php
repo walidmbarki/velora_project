@@ -1,3 +1,15 @@
+<?php
+require_once 'config/db.php';
+
+$stmt = $pdo->prepare("
+    SELECT *
+    FROM products
+    WHERE category_id = 2
+    ORDER BY id DESC
+");
+$stmt->execute();
+$menProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -257,29 +269,62 @@
             </div>
           </article>
 
-          <!-- PRODUCT 8: URL 10 -->
-          <article class="product-card">
-            <div class="product-image">
-              <img
-                src="https://i.pinimg.com/736x/e2/77/ae/e277ae2434b8126babcc55875b5e2c14.jpg"
-                alt="Men footwear / outfit detail"
-                width="600" height="750" loading="lazy">
-              <span class="product-tag">Footwear</span>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Men • Shoes</div>
-              <h3>Minimal Leather Sneakers</h3>
-              <p class="product-note">A clean footwear option that supports most outfits.</p>
-              <div class="price-row">
-                <span class="price">$92</span>
-                <span class="old-price">$130</span>
-              </div>
-              <a href="sale.php" class="btn btn-secondary full-width">View sale</a>
-            </div>
-          </article>
-        </div>
+<?php foreach ($menProducts as $product): ?>
+
+  <article class="product-card">
+
+    <?php if (!empty($product['image'])): ?>
+      <div class="product-image">
+        <img
+          src="<?php echo htmlspecialchars($product['image']); ?>"
+          alt="<?php echo htmlspecialchars($product['name']); ?>"
+          width="600"
+          height="750"
+          loading="lazy">
+        <span class="product-tag">Men</span>
       </div>
-    </section>
+    <?php endif; ?>
+
+    <div class="product-info">
+
+      <div class="product-category">
+        Men • Database
+      </div>
+
+      <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+
+      <p class="product-note">
+        <?php echo htmlspecialchars($product['description']); ?>
+      </p>
+
+      <div class="price-row">
+        <span class="price">
+          $<?php echo number_format($product['price'], 2); ?>
+        </span>
+      </div>
+
+      <p class="product-note">
+        Stock: <?php echo htmlspecialchars($product['stock']); ?>
+      </p>
+
+      <a href="product-details.php?id=<?php echo $product['id']; ?>"
+         class="btn btn-secondary full-width">
+        View Details
+      </a>
+
+      <a href="cart.php?add=<?php echo $product['id']; ?>"
+         class="btn btn-primary full-width"
+         style="margin-top:0.7rem;">
+        Add To Cart
+      </a>
+
+    </div>
+
+  </article>
+
+<?php endforeach; ?>
+
+</div>
 
     <!-- EDITORIAL STORY -->
     <section class="section section-soft" id="outerwear-edit">

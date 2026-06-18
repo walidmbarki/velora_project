@@ -102,146 +102,92 @@ require_once 'includes/db.php';
     </section>
 
     <!-- FEATURED PRODUCTS -->
-    <section class="section" id="featured-products">
-      <div class="container">
-        <div class="split-heading">
-          <div>
-            <p class="mini-label">Featured women’s collection</p>
-            <h2 class="section-title left">Best pieces on this page</h2>
-          </div>
-          <a href="sale.php" class="text-link">Go to sale</a>
-        </div>
+<section class="section" id="featured-products">
+  <div class="container">
+    <div class="split-heading">
+      <div>
+        <p class="mini-label">Featured women’s collection</p>
+        <h2 class="section-title left">Women products from database</h2>
+      </div>
+      <a href="sale.php" class="text-link">Go to sale</a>
+    </div>
 
-        <div class="products-grid">
-          <!-- PRODUCT 1: URL 3 -->
-          <article class="product-card">
-            <div class="product-image">
-              <img
-                src="https://i.pinimg.com/736x/40/9c/34/409c340bbf6360c479c9793318f61328.jpg"
-                alt="Women ivory blazer"
-                width="600" height="750" loading="lazy">
-              <span class="product-tag">Tailoring</span>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Women • Tailoring</div>
-              <h3>Ivory Structured Blazer</h3>
-              <p class="product-note">A sharp neutral layer for elevated wardrobe building.</p>
-              <div class="price-row">
-                <span class="price">$118</span>
-                <span class="old-price">$146</span>
-              </div>
-              <a href="about.php#sizing" class="btn btn-secondary full-width">View sizing info</a>
-            </div>
-          </article>
+    <?php
+    $stmt = $pdo->prepare("
+        SELECT *
+        FROM products
+        WHERE category_id = 1
+        ORDER BY id DESC
+    ");
+    $stmt->execute();
+    $womenProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    ?>
 
-          <!-- PRODUCT 2: URL 4 -->
-          <article class="product-card">
-            <div class="product-image">
-              <img
-                src="https://i.pinimg.com/1200x/c1/7b/80/c17b8050fa7201c17831985ed9d591eb.jpg"
-                alt="Women rose jumpsuit"
-                width="600" height="750" loading="lazy">
-              <span class="product-tag">Occasion</span>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Women • Occasion</div>
-              <h3>Rose Minimal Jumpsuit</h3>
-              <p class="product-note">Fluid lines for modern occasion dressing and evening edits.</p>
-              <div class="price-row">
-                <span class="price">$96</span>
-                <span class="old-price">$128</span>
-              </div>
-              <a href="sale.php" class="btn btn-secondary full-width">Check if on sale</a>
-            </div>
-          </article>
+    <?php if (count($womenProducts) === 0): ?>
 
-          <!-- PRODUCT 3: URL 5 -->
-          <article class="product-card">
-            <div class="product-image">
-              <img
-                src="https://i.pinimg.com/736x/64/ae/3c/64ae3c9dcb767a96373764e51bd10dd2.jpg"
-                alt="Women knitwear top"
-                width="600" height="750" loading="lazy">
-              <span class="product-tag">Knitwear</span>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Women • Knitwear</div>
-              <h3>Soft Wool Layer Top</h3>
-              <p class="product-note">Textural softness designed for transitional layering.</p>
-              <div class="price-row">
-                <span class="price">$72</span>
-                <span class="old-price">$95</span>
-              </div>
-              <a href="index.php#looks" class="btn btn-secondary full-width">See styling ideas</a>
-            </div>
-          </article>
-
-          <!-- PRODUCT 4: URL 6 -->
-          <article class="product-card">
-            <div class="product-image">
-              <img
-                src="https://i.pinimg.com/736x/9c/6e/26/9c6e268b862aa4016287669b1d0799f6.jpg"
-                alt="Women tailored trousers"
-                width="600" height="750" loading="lazy">
-              <span class="product-tag">Trousers</span>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Women • Trousers</div>
-              <h3>Cream Tailored Trousers</h3>
-              <p class="product-note">Relaxed proportion balanced with polished structure.</p>
-              <div class="price-row">
-                <span class="price">$74</span>
-                <span class="old-price">$96</span>
-              </div>
-              <a href="about.php#returns" class="btn btn-secondary full-width">Returns & exchanges</a>
-            </div>
-          </article>
-
-          <!-- PRODUCT 5: URL 7 -->
-          <article class="product-card">
-            <div class="product-image">
-              <img
-                src="https://i.pinimg.com/736x/32/a2/72/32a272d29d5538829aad11c22f1c2cf8.jpg"
-                alt="Women neutral coat"
-                width="600" height="750" loading="lazy">
-              <span class="product-tag">Outerwear</span>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Women • Outerwear</div>
-              <h3>Neutral Longline Coat</h3>
-              <p class="product-note">A clean coat line that anchors the full outfit.</p>
-              <div class="price-row">
-                <span class="price">$132</span>
-                <span class="old-price">$168</span>
-              </div>
-              <a href="men.php" class="btn btn-secondary full-width">See men’s outerwear</a>
-            </div>
-          </article>
-
-          <!-- PRODUCT 6: URL 8 -->
-          <article class="product-card">
-            <div class="product-image">
-              <img
-                src="https://i.pinimg.com/736x/36/63/c2/3663c241f24e81ba5cc077152e656815.jpg"
-                alt="Women satin dress"
-                width="600" height="750" loading="lazy">
-              <span class="product-tag">Dress</span>
-            </div>
-            <div class="product-info">
-              <div class="product-category">Women • Dress</div>
-              <h3>Fluid Satin Dress</h3>
-              <p class="product-note">Smooth drape and understated elegance for evening wear.</p>
-              <div class="price-row">
-                <span class="price">$104</span>
-                <span class="old-price">$139</span>
-              </div>
-              <a href="accessories.php" class="btn btn-secondary full-width">Add accessories</a>
-            </div>
-          </article>
+      <div class="product-card">
+        <div class="product-info">
+          <h3>No women products found</h3>
+          <p class="product-note">Add women products from the admin panel.</p>
         </div>
       </div>
-    </section>
 
+    <?php else: ?>
+
+      <div class="products-grid">
+
+        <?php foreach ($womenProducts as $product): ?>
+
+          <article class="product-card">
+            <?php if (!empty($product['image'])): ?>
+              <div class="product-image">
+                <img
+                  src="<?php echo htmlspecialchars($product['image']); ?>"
+                  alt="<?php echo htmlspecialchars($product['name']); ?>"
+                  width="600"
+                  height="750"
+                  loading="lazy">
+                <span class="product-tag">Women</span>
+              </div>
+            <?php endif; ?>
+
+            <div class="product-info">
+              <div class="product-category">Women • Database</div>
+
+              <h3><?php echo htmlspecialchars($product['name']); ?></h3>
+
+              <p class="product-note">
+                <?php echo htmlspecialchars($product['description']); ?>
+              </p>
+
+              <div class="price-row">
+                <span class="price">
+                  $<?php echo number_format($product['price'], 2); ?>
+                </span>
+              </div>
+
+              <p class="product-note">
+                Stock: <?php echo htmlspecialchars($product['stock']); ?>
+              </p>
+
+              <a href="product-details.php?id=<?php echo $product['id']; ?>" class="btn btn-secondary full-width">
+                View Details
+              </a>
+
+              <a href="cart.php?add=<?php echo $product['id']; ?>" class="btn btn-primary full-width" style="margin-top:0.7rem;">
+                Add To Cart
+              </a>
+            </div>
+          </article>
+
+        <?php endforeach; ?>
+
+      </div>
+
+    <?php endif; ?>
+
+  </div>
+</section>WHERE category_id = 1
     <!-- EDITORIAL STORY -->
     <section class="section section-soft" id="new-season">
       <div class="container story-grid">

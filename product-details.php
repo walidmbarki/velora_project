@@ -49,6 +49,14 @@ if (!$product) {
 <div class="container">
 
     <div class="product-card">
+        <?php if (!empty($product['image'])): ?>
+  <div class="product-image">
+    <img
+      src="<?php echo htmlspecialchars($product['image']); ?>"
+      alt="<?php echo htmlspecialchars($product['name']); ?>"
+    >
+  </div>
+<?php endif; ?>
         <div class="product-info">
 
             <div class="product-category">
@@ -67,9 +75,27 @@ if (!$product) {
                 $<?php echo htmlspecialchars($product['price']); ?>
             </h2>
 
-            <p class="product-note">
-                Stock: <?php echo htmlspecialchars($product['stock']); ?>
-            </p>
+<p class="product-note">
+    Stock: <?php echo htmlspecialchars($product['stock']); ?>
+</p>
+
+<p class="product-note">
+    Status:
+    <?php if ($product['stock'] > 0): ?>
+        <strong>In Stock</strong>
+    <?php else: ?>
+        <strong>Out of Stock</strong>
+    <?php endif; ?>
+</p>
+
+<p class="product-note">
+    Status:
+    <?php if ($product['stock'] > 0): ?>
+        <strong>In Stock</strong>
+    <?php else: ?>
+        <strong>Out of Stock</strong>
+    <?php endif; ?>
+</p>
 
             <a
                 href="cart.php?add=<?php echo $product['id']; ?>"

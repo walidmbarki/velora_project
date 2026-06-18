@@ -9,13 +9,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $description = $_POST['description'];
     $price = $_POST['price'];
     $stock = $_POST['stock'];
+    $image = $_POST['image'];
 
     $stmt = $pdo->prepare("
-        INSERT INTO products (name, description, price, stock)
-        VALUES (?, ?, ?, ?)
+        INSERT INTO products (name, description, price, stock, image)
+        VALUES (?, ?, ?, ?, ?)
     ");
 
-    if ($stmt->execute([$name, $description, $price, $stock])) {
+    if ($stmt->execute([$name, $description, $price, $stock, $image])) {
         $message = "Product added successfully!";
     } else {
         $message = "Error adding product.";
@@ -27,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Product • Velora</title>
     <link rel="stylesheet" href="../style.css">
 </head>
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <?php if ($message): ?>
-        <p><?php echo $message; ?></p>
+        <p class="product-note"><?php echo $message; ?></p>
     <?php endif; ?>
 
     <form method="POST">
@@ -72,6 +72,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label>Stock</label><br>
         <input type="number" name="stock" required><br><br>
+
+        <label>Image URL</label><br>
+        <input 
+            type="text" 
+            name="image" 
+            placeholder="https://picsum.photos/seed/product/600/800"
+            required
+        ><br><br>
 
         <button type="submit" class="btn btn-primary">
             Add Product
