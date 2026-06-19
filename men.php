@@ -1,5 +1,5 @@
 <?php
-require_once 'config/db.php';
+require_once 'includes/db.php';
 
 $stmt = $pdo->prepare("
     SELECT *
