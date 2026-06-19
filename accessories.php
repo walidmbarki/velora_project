@@ -35,11 +35,11 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="icon-btn" aria-label="Search">⌕</button>
-        <button class="icon-btn" aria-label="Wishlist">♡</button>
-        <a href="cart.php" class="icon-btn" aria-label="Cart">🛍</a>
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
-      </div>
+  
+  <button class="icon-btn" aria-label="Wishlist">♡</button>
+  <a href="cart.php" class="icon-btn" aria-label="Cart">🛍</a>
+  <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">◐</button>
+</div>
     </div>
   </header>
 
